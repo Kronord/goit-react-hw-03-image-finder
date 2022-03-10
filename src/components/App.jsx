@@ -40,9 +40,9 @@ class App extends Component {
             console.log(data);
             const hits = data.hits;
             if (hits.length === 0) { 
-              this.setState({ status: 'resolved' });
+              this.setState({ status: 'resolved', data: hits, page: 1, total: data.totalHits});
               return toast.error(`Sorry we don't have image by tag ${imgName}`);
-            };
+            }
 
             this.setState({
               data: hits,
